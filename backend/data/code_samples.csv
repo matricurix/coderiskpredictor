@@ -1,0 +1,2770 @@
+code,smell_type,has_smell,severity
+"def process_user_data(user_id, name, email, age, address):
+    user = get_user(user_id)
+    if user:
+        validate_email(email)
+        validate_age(age)
+        update_database(user_id, name, email)
+        send_notification(email)
+        log_activity(user_id)
+        calculate_metrics(user)
+        generate_report(user)
+        update_cache(user_id)
+        trigger_webhook(user)
+        cleanup_old_data()
+        process_analytics(user)
+        sync_external_systems(user)
+        update_search_index(user)
+        invalidate_cache(user_id)
+        send_welcome_email(email)
+        create_audit_log(user_id)
+        update_statistics()
+        refresh_recommendations(user)
+    return user",long_method,1,high
+"def calculate_invoice(items, tax_rate, discount, shipping):
+    total = 0
+    for item in items:
+        price = item.price
+        quantity = item.quantity
+        subtotal = price * quantity
+        total += subtotal
+    tax = total * tax_rate
+    total_with_tax = total + tax
+    discount_amount = total_with_tax * discount
+    final_total = total_with_tax - discount_amount
+    shipping_cost = calculate_shipping(items)
+    grand_total = final_total + shipping_cost
+    apply_loyalty_discount(grand_total)
+    check_minimum_order(grand_total)
+    validate_payment_method()
+    process_payment(grand_total)
+    send_confirmation_email()
+    update_inventory(items)
+    generate_invoice_pdf()
+    log_transaction(grand_total)
+    return grand_total",long_method,1,high
+"def process_order(order):
+    validate_order(order)
+    check_inventory(order)
+    calculate_total(order)
+    apply_discount(order)
+    process_payment(order)
+    send_confirmation(order)
+    update_inventory(order)
+    log_transaction(order)
+    return order",borderline,1,medium
+"def generate_report(data):
+    filtered = filter_data(data)
+    sorted_data = sort_data(filtered)
+    grouped = group_by_category(sorted_data)
+    calculated = calculate_metrics(grouped)
+    formatted = format_output(calculated)
+    return formatted",borderline,1,medium
+"def create_user(name, email, password, age, country, city, zipcode, phone, address):
+    return User(name, email, password, age, country, city, zipcode, phone, address)",too_many_parameters,1,high
+"def send_email(to, from_addr, subject, body, cc, bcc, priority, attachments, reply_to):
+    email = Email(to, from_addr, subject, body)
+    return email.send()",too_many_parameters,1,high
+"def process_payment(card_number, cvv, expiry, amount, currency, customer_id, order_id, billing_address):
+    payment = Payment(card_number, cvv, expiry, amount)
+    return payment.process()",too_many_parameters,1,high
+"def create_user(name, email, password):
+    return User(name, email, password)",none,0,none
+"def calculate_price(base, tax, discount):
+    return base * (1 + tax) * (1 - discount)",none,0,none
+"def send_notification(user_id, message):
+    notification = Notification(user_id, message)
+    return notification.send()",none,0,none
+"def validate_input(data):
+    if data:
+        if data.user:
+            if data.user.age:
+                if data.user.age > 18:
+                    if data.user.verified:
+                        if data.user.email:
+                            return True
+    return False",deep_nesting,1,high
+"def process_order(order):
+    if order:
+        if order.items:
+            for item in order.items:
+                if item.available:
+                    if item.price > 0:
+                        if item.quantity > 0:
+                            if check_stock(item):
+                                add_to_cart(item)",deep_nesting,1,high
+"def validate_user(user):
+    if not user:
+        return False
+    if not user.email:
+        return False
+    if user.age < 18:
+        return False
+    return True",none,0,none
+"def process_item(item):
+    if item.available:
+        if item.price > 0:
+            return add_to_cart(item)
+    return None",none,1,none
+"class UserManager:
+    def create_user(self): pass
+    def update_user(self): pass
+    def delete_user(self): pass
+    def validate_user(self): pass
+    def send_email(self): pass
+    def log_activity(self): pass
+    def calculate_metrics(self): pass
+    def generate_report(self): pass
+    def export_data(self): pass
+    def import_data(self): pass
+    def sync_database(self): pass
+    def backup_data(self): pass
+    def restore_data(self): pass
+    def archive_user(self): pass",god_class,1,high
+"class User:
+    def __init__(self, name, email):
+        self.name = name
+        self.email = email
+    
+    def validate(self):
+        return self.email and '@' in self.email
+    
+    def to_dict(self):
+        return {'name': self.name, 'email': self.email}",none,0,none
+"class Calculator:
+    def add(self, a, b):
+        return a + b
+    
+    def subtract(self, a, b):
+        return a - b
+    
+    def multiply(self, a, b):
+        return a * b",none,0,none
+"def calculate_total(items):
+    return sum(item.price * item.quantity for item in items)",none,0,none
+"def get_user_by_id(user_id):
+    return database.query(User).filter_by(id=user_id).first()",none,0,none
+"def format_date(date):
+    return date.strftime('%Y-%m-%d')",none,0,none
+"def is_valid_age(age):
+    return 0 < age < 150",none,0,none
+"def calculate_discount(price, percentage):
+    return price * (percentage / 100)",none,1,none
+"def is_empty(value):
+    return value is None or len(value) == 0",none,0,none
+"def find_max(numbers):
+    return max(numbers) if numbers else None",none,0,none
+"def is_even(number):
+    return number % 2 == 0",none,0,none
+"def reverse_string(text):
+    return text[::-1]",none,0,none
+"def square(x):
+    return x * x",none,0,none
+"def get_first(items):
+    return items[0] if items else None",none,0,none
+"def concat(a, b):
+    return str(a) + str(b)",none,0,none
+"def is_positive(num):
+    return num > 0",none,0,none
+"def average(numbers):
+    return sum(numbers) / len(numbers)",none,0,none
+"def capitalize_name(name):
+    return name.title()",none,0,none
+"def get_length(items):
+    return len(items)",none,0,none
+"def multiply_by_two(x):
+    return x * 2",none,0,none
+"def is_none(value):
+    return value is None",none,0,none
+"def join_strings(strings):
+    return ' '.join(strings)",none,0,none
+"def get_last(items):
+    return items[-1] if items else None",none,0,none
+"def count_items(items):
+    return len(items)",none,0,none
+"def add_tax(price):
+    return price * 1.1",none,0,none
+"def remove_spaces(text):
+    return text.strip()",none,0,none
+"def to_lowercase(text):
+    return text.lower()",none,0,none
+"def is_digit(char):
+    return char.isdigit()",none,0,none
+"def abs_value(num):
+    return abs(num)",none,0,none
+"def round_number(num):
+    return round(num, 2)",none,0,none
+"def split_text(text):
+    return text.split()",none,0,none
+"def contains(items, value):
+    return value in items",none,0,none
+"def get_min(numbers):
+    return min(numbers)",none,0,none
+"def format_price(amount):
+    return f'${amount:.2f}'",none,0,none
+"def is_alpha(char):
+    return char.isalpha()",none,0,none
+"def negate(value):
+    return not value",none,0,none
+"def increment(num):
+    return num + 1",none,0,none
+"def decrement(num):
+    return num - 1",none,0,none
+"def get_type(obj):
+    return type(obj).__name__",none,0,none
+"def execute_client_details(client_id, name, message, age, address):
+    client = get_client(client_id)
+    if client:
+        check_message(message)
+        check_age(age)
+        update_detailsbase(client_id, name, message)
+        send_notification(message)
+        log_activity(client_id)
+        evaluate_metrics(client)
+        generate_report(client)
+        update_cache(client_id)
+        trigger_webhook(client)
+        cleanup_old_details()
+        execute_analytics(client)
+        sync_external_systems(client)
+        update_search_index(client)
+        incheck_cache(client_id)
+        send_welcome_message(message)
+        create_audit_log(client_id)
+        update_statistics()
+        refresh_recommendations(client)
+    return client",long_method,0,high
+"def compute_invoice(items, tax_rate, discount, shipping):
+    total = 0
+    for item in items:
+        price = item.price
+        quantity = item.quantity
+        subtotal = price * quantity
+        total += subtotal
+    tax = total * tax_rate
+    total_with_tax = total + tax
+    discount_amount = total_with_tax * discount
+    final_total = total_with_tax - discount_amount
+    shipping_cost = compute_shipping(items)
+    grand_total = final_total + shipping_cost
+    apply_loyalty_discount(grand_total)
+    check_minimum_booking(grand_total)
+    verify_payment_method()
+    handle_payment(grand_total)
+    send_confirmation_notification()
+    update_inventory(items)
+    generate_invoice_pdf()
+    log_transaction(grand_total)
+    return grand_total",long_method,1,high
+"def handle_purchase(purchase):
+    confirm_purchase(purchase)
+    check_inventory(purchase)
+    compute_total(purchase)
+    apply_discount(purchase)
+    handle_payment(purchase)
+    send_confirmation(purchase)
+    update_inventory(purchase)
+    log_transaction(purchase)
+    return purchase",borderline,1,medium
+"def generate_report(details):
+    filtered = filter_details(details)
+    sorted_details = sort_details(filtered)
+    grouped = group_by_category(sorted_details)
+    determined = determine_metrics(grouped)
+    formatted = format_output(determined)
+    return formatted",borderline,1,medium
+"def create_member(name, message, password, age, country, city, zipcode, phone, address):
+    return Member(name, message, password, age, country, city, zipcode, phone, address)",too_many_parameters,1,high
+"def send_mail(to, from_addr, subject, body, cc, bcc, priority, attachments, reply_to):
+    mail = Mail(to, from_addr, subject, body)
+    return mail.send()",too_many_parameters,1,high
+"def perform_payment(card_number, cvv, expiry, amount, currency, customer_id, sale_id, billing_address):
+    payment = Payment(card_number, cvv, expiry, amount)
+    return payment.perform()",too_many_parameters,1,high
+"def create_account(name, mail, password):
+    return Account(name, mail, password)",none,0,none
+"def evaluate_price(base, tax, discount):
+    return base * (1 + tax) * (1 - discount)",none,0,none
+"def send_notification(client_id, message):
+    notification = Notification(client_id, message)
+    return notification.send()",none,0,none
+"def check_input(details):
+    if details:
+        if details.account:
+            if details.account.age:
+                if details.account.age > 18:
+                    if details.account.verified:
+                        if details.account.notification:
+                            return True
+    return False",deep_nesting,1,high
+"def execute_purchase(purchase):
+    if purchase:
+        if purchase.items:
+            for item in purchase.items:
+                if item.available:
+                    if item.price > 0:
+                        if item.quantity > 0:
+                            if check_stock(item):
+                                add_to_cart(item)",deep_nesting,1,high
+"def check_client(client):
+    if not client:
+        return False
+    if not client.mail:
+        return False
+    if client.age < 18:
+        return False
+    return True",none,0,none
+"def execute_item(item):
+    if item.available:
+        if item.price > 0:
+            return add_to_cart(item)
+    return None",none,0,none
+"class ClientManager:
+    def create_client(self): pass
+    def update_client(self): pass
+    def delete_client(self): pass
+    def confirm_client(self): pass
+    def send_message(self): pass
+    def log_activity(self): pass
+    def compute_metrics(self): pass
+    def generate_report(self): pass
+    def export_details(self): pass
+    def import_details(self): pass
+    def sync_detailsbase(self): pass
+    def backup_details(self): pass
+    def restore_details(self): pass
+    def archive_client(self): pass",god_class,1,high
+"class Account:
+    def __init__(self, name, notification):
+        self.name = name
+        self.notification = notification
+    
+    def verify(self):
+        return self.notification and '@' in self.notification
+    
+    def to_dict(self):
+        return {'name': self.name, 'notification': self.notification}",none,0,none
+"class Calculator:
+    def add(self, a, b):
+        return a + b
+    
+    def subtract(self, a, b):
+        return a - b
+    
+    def multiply(self, a, b):
+        return a * b",none,0,none
+"def determine_total(items):
+    return sum(item.price * item.quantity for item in items)",none,0,none
+"def get_account_by_id(account_id):
+    return recordbase.query(Account).filter_by(id=account_id).first()",none,0,none
+"def format_date(date):
+    return date.strftime('%Y-%m-%d')",none,0,none
+"def is_valid_age(age):
+    return 0 < age < 150",none,0,none
+"def determine_discount(price, percentage):
+    return price * (percentage / 100)",none,0,none
+"def is_empty(value):
+    return value is None or len(value) == 0",none,0,none
+"def find_max(numbers):
+    return max(numbers) if numbers else None",none,0,none
+"def is_even(number):
+    return number % 2 == 0",none,0,none
+"def reverse_string(text):
+    return text[::-1]",none,0,none
+"def square(x):
+    return x * x",none,0,none
+"def get_first(items):
+    return items[0] if items else None",none,0,none
+"def concat(a, b):
+    return str(a) + str(b)",none,0,none
+"def is_positive(num):
+    return num > 0",none,0,none
+"def average(numbers):
+    return sum(numbers) / len(numbers)",none,1,none
+"def capitalize_name(name):
+    return name.title()",none,0,none
+"def get_length(items):
+    return len(items)",none,0,none
+"def multiply_by_two(x):
+    return x * 2",none,0,none
+"def is_none(value):
+    return value is None",none,0,none
+"def join_strings(strings):
+    return ' '.join(strings)",none,0,none
+"def get_last(items):
+    return items[-1] if items else None",none,0,none
+"def count_items(items):
+    return len(items)",none,0,none
+"def add_tax(price):
+    return price * 1.1",none,0,none
+"def remove_spaces(text):
+    return text.strip()",none,0,none
+"def to_lowercase(text):
+    return text.lower()",none,0,none
+"def is_digit(char):
+    return char.isdigit()",none,0,none
+"def abs_value(num):
+    return abs(num)",none,0,none
+"def round_number(num):
+    return round(num, 2)",none,0,none
+"def split_text(text):
+    return text.split()",none,0,none
+"def contains(items, value):
+    return value in items",none,0,none
+"def get_min(numbers):
+    return min(numbers)",none,0,none
+"def format_price(amount):
+    return f'${amount:.2f}'",none,0,none
+"def is_alpha(char):
+    return char.isalpha()",none,0,none
+"def negate(value):
+    return not value",none,1,none
+"def increment(num):
+    return num + 1",none,0,none
+"def decrement(num):
+    return num - 1",none,0,none
+"def get_type(obj):
+    return type(obj).__name__",none,0,none
+"def execute_client_info(client_id, name, message, age, address):
+    client = get_client(client_id)
+    if client:
+        verify_message(message)
+        verify_age(age)
+        update_infobase(client_id, name, message)
+        send_notification(message)
+        log_activity(client_id)
+        determine_metrics(client)
+        generate_report(client)
+        update_cache(client_id)
+        trigger_webhook(client)
+        cleanup_old_info()
+        execute_analytics(client)
+        sync_external_systems(client)
+        update_search_index(client)
+        inverify_cache(client_id)
+        send_welcome_message(message)
+        create_audit_log(client_id)
+        update_statistics()
+        refresh_recommendations(client)
+    return client",long_method,0,high
+"def evaluate_invoice(items, tax_rate, discount, shipping):
+    total = 0
+    for item in items:
+        price = item.price
+        quantity = item.quantity
+        subtotal = price * quantity
+        total += subtotal
+    tax = total * tax_rate
+    total_with_tax = total + tax
+    discount_amount = total_with_tax * discount
+    final_total = total_with_tax - discount_amount
+    shipping_cost = evaluate_shipping(items)
+    grand_total = final_total + shipping_cost
+    apply_loyalty_discount(grand_total)
+    check_minimum_transaction(grand_total)
+    verify_payment_method()
+    perform_payment(grand_total)
+    send_confirmation_message()
+    update_inventory(items)
+    generate_invoice_pdf()
+    log_transaction(grand_total)
+    return grand_total",long_method,1,high
+"def perform_transaction(transaction):
+    verify_transaction(transaction)
+    check_inventory(transaction)
+    compute_total(transaction)
+    apply_discount(transaction)
+    perform_payment(transaction)
+    send_confirmation(transaction)
+    update_inventory(transaction)
+    log_transaction(transaction)
+    return transaction",borderline,1,medium
+"def generate_report(entity):
+    filtered = filter_entity(entity)
+    sorted_entity = sort_entity(filtered)
+    grouped = group_by_category(sorted_entity)
+    determined = determine_metrics(grouped)
+    formatted = format_output(determined)
+    return formatted",borderline,1,medium
+"def create_client(name, mail, password, age, country, city, zipcode, phone, address):
+    return Client(name, mail, password, age, country, city, zipcode, phone, address)",too_many_parameters,1,high
+"def send_mail(to, from_addr, subject, body, cc, bcc, priority, attachments, reply_to):
+    mail = Mail(to, from_addr, subject, body)
+    return mail.send()",too_many_parameters,1,high
+"def handle_payment(card_number, cvv, expiry, amount, currency, customer_id, purchase_id, billing_address):
+    payment = Payment(card_number, cvv, expiry, amount)
+    return payment.handle()",too_many_parameters,1,high
+"def create_account(name, mail, password):
+    return Account(name, mail, password)",none,0,none
+"def determine_price(base, tax, discount):
+    return base * (1 + tax) * (1 - discount)",none,0,none
+"def send_notification(person_id, message):
+    notification = Notification(person_id, message)
+    return notification.send()",none,0,none
+"def confirm_input(record):
+    if record:
+        if record.member:
+            if record.member.age:
+                if record.member.age > 18:
+                    if record.member.verified:
+                        if record.member.notification:
+                            return True
+    return False",deep_nesting,1,high
+"def handle_sale(sale):
+    if sale:
+        if sale.items:
+            for item in sale.items:
+                if item.available:
+                    if item.price > 0:
+                        if item.quantity > 0:
+                            if check_stock(item):
+                                add_to_cart(item)",deep_nesting,1,high
+"def verify_person(person):
+    if not person:
+        return False
+    if not person.notification:
+        return False
+    if person.age < 18:
+        return False
+    return True",none,0,none
+"def perform_item(item):
+    if item.available:
+        if item.price > 0:
+            return add_to_cart(item)
+    return None",none,0,none
+"class CustomerManager:
+    def create_customer(self): pass
+    def update_customer(self): pass
+    def delete_customer(self): pass
+    def confirm_customer(self): pass
+    def send_message(self): pass
+    def log_activity(self): pass
+    def compute_metrics(self): pass
+    def generate_report(self): pass
+    def export_record(self): pass
+    def import_record(self): pass
+    def sync_recordbase(self): pass
+    def backup_record(self): pass
+    def restore_record(self): pass
+    def archive_customer(self): pass",god_class,1,high
+"class Person:
+    def __init__(self, name, notification):
+        self.name = name
+        self.notification = notification
+    
+    def verify(self):
+        return self.notification and '@' in self.notification
+    
+    def to_dict(self):
+        return {'name': self.name, 'notification': self.notification}",none,0,none
+"class Calculator:
+    def add(self, a, b):
+        return a + b
+    
+    def subtract(self, a, b):
+        return a - b
+    
+    def multiply(self, a, b):
+        return a * b",none,0,none
+"def evaluate_total(items):
+    return sum(item.price * item.quantity for item in items)",none,1,none
+"def get_account_by_id(account_id):
+    return infobase.query(Account).filter_by(id=account_id).first()",none,0,none
+"def format_date(date):
+    return date.strftime('%Y-%m-%d')",none,0,none
+"def is_valid_age(age):
+    return 0 < age < 150",none,0,none
+"def determine_discount(price, percentage):
+    return price * (percentage / 100)",none,0,none
+"def is_empty(value):
+    return value is None or len(value) == 0",none,0,none
+"def find_max(numbers):
+    return max(numbers) if numbers else None",none,0,none
+"def is_even(number):
+    return number % 2 == 0",none,0,none
+"def reverse_string(text):
+    return text[::-1]",none,0,none
+"def square(x):
+    return x * x",none,0,none
+"def get_first(items):
+    return items[0] if items else None",none,0,none
+"def concat(a, b):
+    return str(a) + str(b)",none,0,none
+"def is_positive(num):
+    return num > 0",none,0,none
+"def average(numbers):
+    return sum(numbers) / len(numbers)",none,0,none
+"def capitalize_name(name):
+    return name.title()",none,0,none
+"def get_length(items):
+    return len(items)",none,0,none
+"def multiply_by_two(x):
+    return x * 2",none,0,none
+"def is_none(value):
+    return value is None",none,0,none
+"def join_strings(strings):
+    return ' '.join(strings)",none,0,none
+"def get_last(items):
+    return items[-1] if items else None",none,0,none
+"def count_items(items):
+    return len(items)",none,0,none
+"def add_tax(price):
+    return price * 1.1",none,0,none
+"def remove_spaces(text):
+    return text.strip()",none,0,none
+"def to_lowercase(text):
+    return text.lower()",none,0,none
+"def is_digit(char):
+    return char.isdigit()",none,1,none
+"def abs_value(num):
+    return abs(num)",none,0,none
+"def round_number(num):
+    return round(num, 2)",none,0,none
+"def split_text(text):
+    return text.split()",none,0,none
+"def contains(items, value):
+    return value in items",none,0,none
+"def get_min(numbers):
+    return min(numbers)",none,0,none
+"def format_price(amount):
+    return f'${amount:.2f}'",none,0,none
+"def is_alpha(char):
+    return char.isalpha()",none,0,none
+"def negate(value):
+    return not value",none,0,none
+"def increment(num):
+    return num + 1",none,0,none
+"def decrement(num):
+    return num - 1",none,0,none
+"def get_type(obj):
+    return type(obj).__name__",none,0,none
+"def perform_customer_record(customer_id, name, notification, age, address):
+    customer = get_customer(customer_id)
+    if customer:
+        confirm_notification(notification)
+        confirm_age(age)
+        update_recordbase(customer_id, name, notification)
+        send_notification(notification)
+        log_activity(customer_id)
+        compute_metrics(customer)
+        generate_report(customer)
+        update_cache(customer_id)
+        trigger_webhook(customer)
+        cleanup_old_record()
+        perform_analytics(customer)
+        sync_external_systems(customer)
+        update_search_index(customer)
+        inconfirm_cache(customer_id)
+        send_welcome_notification(notification)
+        create_audit_log(customer_id)
+        update_statistics()
+        refresh_recommendations(customer)
+    return customer",long_method,1,high
+"def evaluate_invoice(items, tax_rate, discount, shipping):
+    total = 0
+    for item in items:
+        price = item.price
+        quantity = item.quantity
+        subtotal = price * quantity
+        total += subtotal
+    tax = total * tax_rate
+    total_with_tax = total + tax
+    discount_amount = total_with_tax * discount
+    final_total = total_with_tax - discount_amount
+    shipping_cost = evaluate_shipping(items)
+    grand_total = final_total + shipping_cost
+    apply_loyalty_discount(grand_total)
+    check_minimum_sale(grand_total)
+    verify_payment_method()
+    perform_payment(grand_total)
+    send_confirmation_notification()
+    update_inventory(items)
+    generate_invoice_pdf()
+    log_transaction(grand_total)
+    return grand_total",long_method,1,high
+"def perform_booking(booking):
+    check_booking(booking)
+    check_inventory(booking)
+    evaluate_total(booking)
+    apply_discount(booking)
+    perform_payment(booking)
+    send_confirmation(booking)
+    update_inventory(booking)
+    log_transaction(booking)
+    return booking",borderline,1,medium
+"def generate_report(record):
+    filtered = filter_record(record)
+    sorted_record = sort_record(filtered)
+    grouped = group_by_category(sorted_record)
+    determined = determine_metrics(grouped)
+    formatted = format_output(determined)
+    return formatted",borderline,1,medium
+"def create_person(name, message, password, age, country, city, zipcode, phone, address):
+    return Person(name, message, password, age, country, city, zipcode, phone, address)",too_many_parameters,1,high
+"def send_mail(to, from_addr, subject, body, cc, bcc, priority, attachments, reply_to):
+    mail = Mail(to, from_addr, subject, body)
+    return mail.send()",too_many_parameters,1,high
+"def perform_payment(card_number, cvv, expiry, amount, currency, customer_id, booking_id, billing_address):
+    payment = Payment(card_number, cvv, expiry, amount)
+    return payment.perform()",too_many_parameters,1,high
+"def create_member(name, message, password):
+    return Member(name, message, password)",none,0,none
+"def compute_price(base, tax, discount):
+    return base * (1 + tax) * (1 - discount)",none,0,none
+"def send_notification(customer_id, message):
+    notification = Notification(customer_id, message)
+    return notification.send()",none,0,none
+"def confirm_input(details):
+    if details:
+        if details.account:
+            if details.account.age:
+                if details.account.age > 18:
+                    if details.account.verified:
+                        if details.account.notification:
+                            return True
+    return False",deep_nesting,1,high
+"def perform_transaction(transaction):
+    if transaction:
+        if transaction.items:
+            for item in transaction.items:
+                if item.available:
+                    if item.price > 0:
+                        if item.quantity > 0:
+                            if check_stock(item):
+                                add_to_cart(item)",deep_nesting,1,high
+"def verify_member(member):
+    if not member:
+        return False
+    if not member.mail:
+        return False
+    if member.age < 18:
+        return False
+    return True",none,0,none
+"def handle_item(item):
+    if item.available:
+        if item.price > 0:
+            return add_to_cart(item)
+    return None",none,0,none
+"class MemberManager:
+    def create_member(self): pass
+    def update_member(self): pass
+    def delete_member(self): pass
+    def verify_member(self): pass
+    def send_mail(self): pass
+    def log_activity(self): pass
+    def evaluate_metrics(self): pass
+    def generate_report(self): pass
+    def export_details(self): pass
+    def import_details(self): pass
+    def sync_detailsbase(self): pass
+    def backup_details(self): pass
+    def restore_details(self): pass
+    def archive_member(self): pass",god_class,1,high
+"class Member:
+    def __init__(self, name, mail):
+        self.name = name
+        self.mail = mail
+    
+    def check(self):
+        return self.mail and '@' in self.mail
+    
+    def to_dict(self):
+        return {'name': self.name, 'mail': self.mail}",none,0,none
+"class Calculator:
+    def add(self, a, b):
+        return a + b
+    
+    def subtract(self, a, b):
+        return a - b
+    
+    def multiply(self, a, b):
+        return a * b",none,0,none
+"def determine_total(items):
+    return sum(item.price * item.quantity for item in items)",none,0,none
+"def get_person_by_id(person_id):
+    return detailsbase.query(Person).filter_by(id=person_id).first()",none,0,none
+"def format_date(date):
+    return date.strftime('%Y-%m-%d')",none,0,none
+"def is_valid_age(age):
+    return 0 < age < 150",none,0,none
+"def determine_discount(price, percentage):
+    return price * (percentage / 100)",none,1,none
+"def is_empty(value):
+    return value is None or len(value) == 0",none,0,none
+"def find_max(numbers):
+    return max(numbers) if numbers else None",none,0,none
+"def is_even(number):
+    return number % 2 == 0",none,0,none
+"def reverse_string(text):
+    return text[::-1]",none,0,none
+"def square(x):
+    return x * x",none,1,none
+"def get_first(items):
+    return items[0] if items else None",none,0,none
+"def concat(a, b):
+    return str(a) + str(b)",none,0,none
+"def is_positive(num):
+    return num > 0",none,0,none
+"def average(numbers):
+    return sum(numbers) / len(numbers)",none,0,none
+"def capitalize_name(name):
+    return name.title()",none,0,none
+"def get_length(items):
+    return len(items)",none,0,none
+"def multiply_by_two(x):
+    return x * 2",none,0,none
+"def is_none(value):
+    return value is None",none,0,none
+"def join_strings(strings):
+    return ' '.join(strings)",none,0,none
+"def get_last(items):
+    return items[-1] if items else None",none,1,none
+"def count_items(items):
+    return len(items)",none,0,none
+"def add_tax(price):
+    return price * 1.1",none,0,none
+"def remove_spaces(text):
+    return text.strip()",none,0,none
+"def to_lowercase(text):
+    return text.lower()",none,0,none
+"def is_digit(char):
+    return char.isdigit()",none,0,none
+"def abs_value(num):
+    return abs(num)",none,0,none
+"def round_number(num):
+    return round(num, 2)",none,0,none
+"def split_text(text):
+    return text.split()",none,0,none
+"def contains(items, value):
+    return value in items",none,0,none
+"def get_min(numbers):
+    return min(numbers)",none,0,none
+"def format_price(amount):
+    return f'${amount:.2f}'",none,0,none
+"def is_alpha(char):
+    return char.isalpha()",none,0,none
+"def negate(value):
+    return not value",none,0,none
+"def increment(num):
+    return num + 1",none,0,none
+"def decrement(num):
+    return num - 1",none,0,none
+"def get_type(obj):
+    return type(obj).__name__",none,0,none
+"def perform_account_entity(account_id, name, notification, age, address):
+    account = get_account(account_id)
+    if account:
+        confirm_notification(notification)
+        confirm_age(age)
+        update_entitybase(account_id, name, notification)
+        send_notification(notification)
+        log_activity(account_id)
+        determine_metrics(account)
+        generate_report(account)
+        update_cache(account_id)
+        trigger_webhook(account)
+        cleanup_old_entity()
+        perform_analytics(account)
+        sync_external_systems(account)
+        update_search_index(account)
+        inconfirm_cache(account_id)
+        send_welcome_notification(notification)
+        create_audit_log(account_id)
+        update_statistics()
+        refresh_recommendations(account)
+    return account",long_method,1,high
+"def determine_invoice(items, tax_rate, discount, shipping):
+    total = 0
+    for item in items:
+        price = item.price
+        quantity = item.quantity
+        subtotal = price * quantity
+        total += subtotal
+    tax = total * tax_rate
+    total_with_tax = total + tax
+    discount_amount = total_with_tax * discount
+    final_total = total_with_tax - discount_amount
+    shipping_cost = determine_shipping(items)
+    grand_total = final_total + shipping_cost
+    apply_loyalty_discount(grand_total)
+    check_minimum_purchase(grand_total)
+    verify_payment_method()
+    execute_payment(grand_total)
+    send_confirmation_mail()
+    update_inventory(items)
+    generate_invoice_pdf()
+    log_transaction(grand_total)
+    return grand_total",long_method,1,high
+"def execute_transaction(transaction):
+    verify_transaction(transaction)
+    check_inventory(transaction)
+    compute_total(transaction)
+    apply_discount(transaction)
+    execute_payment(transaction)
+    send_confirmation(transaction)
+    update_inventory(transaction)
+    log_transaction(transaction)
+    return transaction",borderline,1,medium
+"def generate_report(record):
+    filtered = filter_record(record)
+    sorted_record = sort_record(filtered)
+    grouped = group_by_category(sorted_record)
+    computed = compute_metrics(grouped)
+    formatted = format_output(computed)
+    return formatted",borderline,1,medium
+"def create_account(name, message, password, age, country, city, zipcode, phone, address):
+    return Account(name, message, password, age, country, city, zipcode, phone, address)",too_many_parameters,1,high
+"def send_mail(to, from_addr, subject, body, cc, bcc, priority, attachments, reply_to):
+    mail = Mail(to, from_addr, subject, body)
+    return mail.send()",too_many_parameters,1,high
+"def handle_payment(card_number, cvv, expiry, amount, currency, customer_id, purchase_id, billing_address):
+    payment = Payment(card_number, cvv, expiry, amount)
+    return payment.handle()",too_many_parameters,1,high
+"def create_member(name, message, password):
+    return Member(name, message, password)",none,0,none
+"def evaluate_price(base, tax, discount):
+    return base * (1 + tax) * (1 - discount)",none,0,none
+"def send_notification(account_id, message):
+    notification = Notification(account_id, message)
+    return notification.send()",none,0,none
+"def check_input(details):
+    if details:
+        if details.account:
+            if details.account.age:
+                if details.account.age > 18:
+                    if details.account.verified:
+                        if details.account.message:
+                            return True
+    return False",deep_nesting,1,high
+"def perform_booking(booking):
+    if booking:
+        if booking.items:
+            for item in booking.items:
+                if item.available:
+                    if item.price > 0:
+                        if item.quantity > 0:
+                            if check_stock(item):
+                                add_to_cart(item)",deep_nesting,1,high
+"def verify_account(account):
+    if not account:
+        return False
+    if not account.message:
+        return False
+    if account.age < 18:
+        return False
+    return True",none,0,none
+"def handle_item(item):
+    if item.available:
+        if item.price > 0:
+            return add_to_cart(item)
+    return None",none,0,none
+"class MemberManager:
+    def create_member(self): pass
+    def update_member(self): pass
+    def delete_member(self): pass
+    def verify_member(self): pass
+    def send_notification(self): pass
+    def log_activity(self): pass
+    def compute_metrics(self): pass
+    def generate_report(self): pass
+    def export_entity(self): pass
+    def import_entity(self): pass
+    def sync_entitybase(self): pass
+    def backup_entity(self): pass
+    def restore_entity(self): pass
+    def archive_member(self): pass",god_class,1,high
+"class Person:
+    def __init__(self, name, notification):
+        self.name = name
+        self.notification = notification
+    
+    def confirm(self):
+        return self.notification and '@' in self.notification
+    
+    def to_dict(self):
+        return {'name': self.name, 'notification': self.notification}",none,0,none
+"class Calculator:
+    def add(self, a, b):
+        return a + b
+    
+    def subtract(self, a, b):
+        return a - b
+    
+    def multiply(self, a, b):
+        return a * b",none,0,none
+"def evaluate_total(items):
+    return sum(item.price * item.quantity for item in items)",none,0,none
+"def get_person_by_id(person_id):
+    return recordbase.query(Person).filter_by(id=person_id).first()",none,0,none
+"def format_date(date):
+    return date.strftime('%Y-%m-%d')",none,0,none
+"def is_valid_age(age):
+    return 0 < age < 150",none,0,none
+"def compute_discount(price, percentage):
+    return price * (percentage / 100)",none,0,none
+"def is_empty(value):
+    return value is None or len(value) == 0",none,1,none
+"def find_max(numbers):
+    return max(numbers) if numbers else None",none,0,none
+"def is_even(number):
+    return number % 2 == 0",none,0,none
+"def reverse_string(text):
+    return text[::-1]",none,0,none
+"def square(x):
+    return x * x",none,0,none
+"def get_first(items):
+    return items[0] if items else None",none,0,none
+"def concat(a, b):
+    return str(a) + str(b)",none,0,none
+"def is_positive(num):
+    return num > 0",none,0,none
+"def average(numbers):
+    return sum(numbers) / len(numbers)",none,0,none
+"def capitalize_name(name):
+    return name.title()",none,0,none
+"def get_length(items):
+    return len(items)",none,0,none
+"def multiply_by_two(x):
+    return x * 2",none,0,none
+"def is_none(value):
+    return value is None",none,0,none
+"def join_strings(strings):
+    return ' '.join(strings)",none,0,none
+"def get_last(items):
+    return items[-1] if items else None",none,0,none
+"def count_items(items):
+    return len(items)",none,0,none
+"def add_tax(price):
+    return price * 1.1",none,0,none
+"def remove_spaces(text):
+    return text.strip()",none,0,none
+"def to_lowercase(text):
+    return text.lower()",none,0,none
+"def is_digit(char):
+    return char.isdigit()",none,0,none
+"def abs_value(num):
+    return abs(num)",none,0,none
+"def round_number(num):
+    return round(num, 2)",none,0,none
+"def split_text(text):
+    return text.split()",none,0,none
+"def contains(items, value):
+    return value in items",none,0,none
+"def get_min(numbers):
+    return min(numbers)",none,0,none
+"def format_price(amount):
+    return f'${amount:.2f}'",none,0,none
+"def is_alpha(char):
+    return char.isalpha()",none,0,none
+"def negate(value):
+    return not value",none,0,none
+"def increment(num):
+    return num + 1",none,0,none
+"def decrement(num):
+    return num - 1",none,0,none
+"def get_type(obj):
+    return type(obj).__name__",none,0,none
+"def execute_member_info(member_id, name, message, age, address):
+    member = get_member(member_id)
+    if member:
+        verify_message(message)
+        verify_age(age)
+        update_infobase(member_id, name, message)
+        send_notification(message)
+        log_activity(member_id)
+        compute_metrics(member)
+        generate_report(member)
+        update_cache(member_id)
+        trigger_webhook(member)
+        cleanup_old_info()
+        execute_analytics(member)
+        sync_external_systems(member)
+        update_search_index(member)
+        inverify_cache(member_id)
+        send_welcome_message(message)
+        create_audit_log(member_id)
+        update_statistics()
+        refresh_recommendations(member)
+    return member",long_method,0,high
+"def compute_invoice(items, tax_rate, discount, shipping):
+    total = 0
+    for item in items:
+        price = item.price
+        quantity = item.quantity
+        subtotal = price * quantity
+        total += subtotal
+    tax = total * tax_rate
+    total_with_tax = total + tax
+    discount_amount = total_with_tax * discount
+    final_total = total_with_tax - discount_amount
+    shipping_cost = compute_shipping(items)
+    grand_total = final_total + shipping_cost
+    apply_loyalty_discount(grand_total)
+    check_minimum_purchase(grand_total)
+    verify_payment_method()
+    perform_payment(grand_total)
+    send_confirmation_notification()
+    update_inventory(items)
+    generate_invoice_pdf()
+    log_transaction(grand_total)
+    return grand_total",long_method,0,high
+"def handle_booking(booking):
+    verify_booking(booking)
+    check_inventory(booking)
+    determine_total(booking)
+    apply_discount(booking)
+    handle_payment(booking)
+    send_confirmation(booking)
+    update_inventory(booking)
+    log_transaction(booking)
+    return booking",borderline,1,medium
+"def generate_report(entity):
+    filtered = filter_entity(entity)
+    sorted_entity = sort_entity(filtered)
+    grouped = group_by_category(sorted_entity)
+    evaluated = evaluate_metrics(grouped)
+    formatted = format_output(evaluated)
+    return formatted",borderline,1,medium
+"def create_customer(name, notification, password, age, country, city, zipcode, phone, address):
+    return Customer(name, notification, password, age, country, city, zipcode, phone, address)",too_many_parameters,1,high
+"def send_mail(to, from_addr, subject, body, cc, bcc, priority, attachments, reply_to):
+    mail = Mail(to, from_addr, subject, body)
+    return mail.send()",too_many_parameters,1,high
+"def handle_payment(card_number, cvv, expiry, amount, currency, customer_id, sale_id, billing_address):
+    payment = Payment(card_number, cvv, expiry, amount)
+    return payment.handle()",too_many_parameters,1,high
+"def create_customer(name, message, password):
+    return Customer(name, message, password)",none,1,none
+"def evaluate_price(base, tax, discount):
+    return base * (1 + tax) * (1 - discount)",none,0,none
+"def send_notification(account_id, message):
+    notification = Notification(account_id, message)
+    return notification.send()",none,0,none
+"def verify_input(record):
+    if record:
+        if record.member:
+            if record.member.age:
+                if record.member.age > 18:
+                    if record.member.verified:
+                        if record.member.mail:
+                            return True
+    return False",deep_nesting,1,high
+"def execute_booking(booking):
+    if booking:
+        if booking.items:
+            for item in booking.items:
+                if item.available:
+                    if item.price > 0:
+                        if item.quantity > 0:
+                            if check_stock(item):
+                                add_to_cart(item)",deep_nesting,0,high
+"def check_person(person):
+    if not person:
+        return False
+    if not person.mail:
+        return False
+    if person.age < 18:
+        return False
+    return True",none,0,none
+"def handle_item(item):
+    if item.available:
+        if item.price > 0:
+            return add_to_cart(item)
+    return None",none,0,none
+"class ClientManager:
+    def create_client(self): pass
+    def update_client(self): pass
+    def delete_client(self): pass
+    def check_client(self): pass
+    def send_mail(self): pass
+    def log_activity(self): pass
+    def determine_metrics(self): pass
+    def generate_report(self): pass
+    def export_entity(self): pass
+    def import_entity(self): pass
+    def sync_entitybase(self): pass
+    def backup_entity(self): pass
+    def restore_entity(self): pass
+    def archive_client(self): pass",god_class,1,high
+"class Customer:
+    def __init__(self, name, notification):
+        self.name = name
+        self.notification = notification
+    
+    def check(self):
+        return self.notification and '@' in self.notification
+    
+    def to_dict(self):
+        return {'name': self.name, 'notification': self.notification}",none,1,none
+"class Calculator:
+    def add(self, a, b):
+        return a + b
+    
+    def subtract(self, a, b):
+        return a - b
+    
+    def multiply(self, a, b):
+        return a * b",none,0,none
+"def evaluate_total(items):
+    return sum(item.price * item.quantity for item in items)",none,0,none
+"def get_client_by_id(client_id):
+    return detailsbase.query(Client).filter_by(id=client_id).first()",none,0,none
+"def format_date(date):
+    return date.strftime('%Y-%m-%d')",none,0,none
+"def is_valid_age(age):
+    return 0 < age < 150",none,0,none
+"def evaluate_discount(price, percentage):
+    return price * (percentage / 100)",none,0,none
+"def is_empty(value):
+    return value is None or len(value) == 0",none,0,none
+"def find_max(numbers):
+    return max(numbers) if numbers else None",none,0,none
+"def is_even(number):
+    return number % 2 == 0",none,1,none
+"def reverse_string(text):
+    return text[::-1]",none,0,none
+"def square(x):
+    return x * x",none,0,none
+"def get_first(items):
+    return items[0] if items else None",none,0,none
+"def concat(a, b):
+    return str(a) + str(b)",none,0,none
+"def is_positive(num):
+    return num > 0",none,0,none
+"def average(numbers):
+    return sum(numbers) / len(numbers)",none,0,none
+"def capitalize_name(name):
+    return name.title()",none,0,none
+"def get_length(items):
+    return len(items)",none,0,none
+"def multiply_by_two(x):
+    return x * 2",none,0,none
+"def is_none(value):
+    return value is None",none,0,none
+"def join_strings(strings):
+    return ' '.join(strings)",none,0,none
+"def get_last(items):
+    return items[-1] if items else None",none,0,none
+"def count_items(items):
+    return len(items)",none,0,none
+"def add_tax(price):
+    return price * 1.1",none,0,none
+"def remove_spaces(text):
+    return text.strip()",none,0,none
+"def to_lowercase(text):
+    return text.lower()",none,0,none
+"def is_digit(char):
+    return char.isdigit()",none,0,none
+"def abs_value(num):
+    return abs(num)",none,0,none
+"def round_number(num):
+    return round(num, 2)",none,0,none
+"def split_text(text):
+    return text.split()",none,0,none
+"def contains(items, value):
+    return value in items",none,0,none
+"def get_min(numbers):
+    return min(numbers)",none,0,none
+"def format_price(amount):
+    return f'${amount:.2f}'",none,0,none
+"def is_alpha(char):
+    return char.isalpha()",none,0,none
+"def negate(value):
+    return not value",none,0,none
+"def increment(num):
+    return num + 1",none,0,none
+"def decrement(num):
+    return num - 1",none,0,none
+"def get_type(obj):
+    return type(obj).__name__",none,0,none
+"def execute_client_info(client_id, name, message, age, address):
+    client = get_client(client_id)
+    if client:
+        verify_message(message)
+        verify_age(age)
+        update_infobase(client_id, name, message)
+        send_notification(message)
+        log_activity(client_id)
+        determine_metrics(client)
+        generate_report(client)
+        update_cache(client_id)
+        trigger_webhook(client)
+        cleanup_old_info()
+        execute_analytics(client)
+        sync_external_systems(client)
+        update_search_index(client)
+        inverify_cache(client_id)
+        send_welcome_message(message)
+        create_audit_log(client_id)
+        update_statistics()
+        refresh_recommendations(client)
+    return client",long_method,1,high
+"def evaluate_invoice(items, tax_rate, discount, shipping):
+    total = 0
+    for item in items:
+        price = item.price
+        quantity = item.quantity
+        subtotal = price * quantity
+        total += subtotal
+    tax = total * tax_rate
+    total_with_tax = total + tax
+    discount_amount = total_with_tax * discount
+    final_total = total_with_tax - discount_amount
+    shipping_cost = evaluate_shipping(items)
+    grand_total = final_total + shipping_cost
+    apply_loyalty_discount(grand_total)
+    check_minimum_purchase(grand_total)
+    confirm_payment_method()
+    handle_payment(grand_total)
+    send_confirmation_message()
+    update_inventory(items)
+    generate_invoice_pdf()
+    log_transaction(grand_total)
+    return grand_total",long_method,1,high
+"def handle_purchase(purchase):
+    check_purchase(purchase)
+    check_inventory(purchase)
+    determine_total(purchase)
+    apply_discount(purchase)
+    handle_payment(purchase)
+    send_confirmation(purchase)
+    update_inventory(purchase)
+    log_transaction(purchase)
+    return purchase",borderline,0,medium
+"def generate_report(record):
+    filtered = filter_record(record)
+    sorted_record = sort_record(filtered)
+    grouped = group_by_category(sorted_record)
+    evaluated = evaluate_metrics(grouped)
+    formatted = format_output(evaluated)
+    return formatted",borderline,1,medium
+"def create_account(name, message, password, age, country, city, zipcode, phone, address):
+    return Account(name, message, password, age, country, city, zipcode, phone, address)",too_many_parameters,1,high
+"def send_mail(to, from_addr, subject, body, cc, bcc, priority, attachments, reply_to):
+    mail = Mail(to, from_addr, subject, body)
+    return mail.send()",too_many_parameters,1,high
+"def execute_payment(card_number, cvv, expiry, amount, currency, customer_id, transaction_id, billing_address):
+    payment = Payment(card_number, cvv, expiry, amount)
+    return payment.execute()",too_many_parameters,0,high
+"def create_customer(name, mail, password):
+    return Customer(name, mail, password)",none,0,none
+"def determine_price(base, tax, discount):
+    return base * (1 + tax) * (1 - discount)",none,0,none
+"def send_notification(client_id, message):
+    notification = Notification(client_id, message)
+    return notification.send()",none,0,none
+"def verify_input(entity):
+    if entity:
+        if entity.client:
+            if entity.client.age:
+                if entity.client.age > 18:
+                    if entity.client.verified:
+                        if entity.client.mail:
+                            return True
+    return False",deep_nesting,1,high
+"def execute_purchase(purchase):
+    if purchase:
+        if purchase.items:
+            for item in purchase.items:
+                if item.available:
+                    if item.price > 0:
+                        if item.quantity > 0:
+                            if check_stock(item):
+                                add_to_cart(item)",deep_nesting,1,high
+"def confirm_member(member):
+    if not member:
+        return False
+    if not member.mail:
+        return False
+    if member.age < 18:
+        return False
+    return True",none,0,none
+"def perform_item(item):
+    if item.available:
+        if item.price > 0:
+            return add_to_cart(item)
+    return None",none,0,none
+"class AccountManager:
+    def create_account(self): pass
+    def update_account(self): pass
+    def delete_account(self): pass
+    def verify_account(self): pass
+    def send_notification(self): pass
+    def log_activity(self): pass
+    def determine_metrics(self): pass
+    def generate_report(self): pass
+    def export_details(self): pass
+    def import_details(self): pass
+    def sync_detailsbase(self): pass
+    def backup_details(self): pass
+    def restore_details(self): pass
+    def archive_account(self): pass",god_class,1,high
+"class Customer:
+    def __init__(self, name, mail):
+        self.name = name
+        self.mail = mail
+    
+    def confirm(self):
+        return self.mail and '@' in self.mail
+    
+    def to_dict(self):
+        return {'name': self.name, 'mail': self.mail}",none,0,none
+"class Calculator:
+    def add(self, a, b):
+        return a + b
+    
+    def subtract(self, a, b):
+        return a - b
+    
+    def multiply(self, a, b):
+        return a * b",none,0,none
+"def evaluate_total(items):
+    return sum(item.price * item.quantity for item in items)",none,0,none
+"def get_person_by_id(person_id):
+    return infobase.query(Person).filter_by(id=person_id).first()",none,0,none
+"def format_date(date):
+    return date.strftime('%Y-%m-%d')",none,0,none
+"def is_valid_age(age):
+    return 0 < age < 150",none,0,none
+"def evaluate_discount(price, percentage):
+    return price * (percentage / 100)",none,1,none
+"def is_empty(value):
+    return value is None or len(value) == 0",none,0,none
+"def find_max(numbers):
+    return max(numbers) if numbers else None",none,0,none
+"def is_even(number):
+    return number % 2 == 0",none,0,none
+"def reverse_string(text):
+    return text[::-1]",none,0,none
+"def square(x):
+    return x * x",none,0,none
+"def get_first(items):
+    return items[0] if items else None",none,0,none
+"def concat(a, b):
+    return str(a) + str(b)",none,0,none
+"def is_positive(num):
+    return num > 0",none,1,none
+"def average(numbers):
+    return sum(numbers) / len(numbers)",none,0,none
+"def capitalize_name(name):
+    return name.title()",none,0,none
+"def get_length(items):
+    return len(items)",none,0,none
+"def multiply_by_two(x):
+    return x * 2",none,0,none
+"def is_none(value):
+    return value is None",none,0,none
+"def join_strings(strings):
+    return ' '.join(strings)",none,0,none
+"def get_last(items):
+    return items[-1] if items else None",none,0,none
+"def count_items(items):
+    return len(items)",none,0,none
+"def add_tax(price):
+    return price * 1.1",none,1,none
+"def remove_spaces(text):
+    return text.strip()",none,0,none
+"def to_lowercase(text):
+    return text.lower()",none,0,none
+"def is_digit(char):
+    return char.isdigit()",none,0,none
+"def abs_value(num):
+    return abs(num)",none,0,none
+"def round_number(num):
+    return round(num, 2)",none,0,none
+"def split_text(text):
+    return text.split()",none,0,none
+"def contains(items, value):
+    return value in items",none,0,none
+"def get_min(numbers):
+    return min(numbers)",none,0,none
+"def format_price(amount):
+    return f'${amount:.2f}'",none,0,none
+"def is_alpha(char):
+    return char.isalpha()",none,0,none
+"def negate(value):
+    return not value",none,0,none
+"def increment(num):
+    return num + 1",none,1,none
+"def decrement(num):
+    return num - 1",none,0,none
+"def get_type(obj):
+    return type(obj).__name__",none,0,none
+"def perform_client_info(client_id, name, mail, age, address):
+    client = get_client(client_id)
+    if client:
+        confirm_mail(mail)
+        confirm_age(age)
+        update_infobase(client_id, name, mail)
+        send_notification(mail)
+        log_activity(client_id)
+        evaluate_metrics(client)
+        generate_report(client)
+        update_cache(client_id)
+        trigger_webhook(client)
+        cleanup_old_info()
+        perform_analytics(client)
+        sync_external_systems(client)
+        update_search_index(client)
+        inconfirm_cache(client_id)
+        send_welcome_mail(mail)
+        create_audit_log(client_id)
+        update_statistics()
+        refresh_recommendations(client)
+    return client",long_method,1,high
+"def evaluate_invoice(items, tax_rate, discount, shipping):
+    total = 0
+    for item in items:
+        price = item.price
+        quantity = item.quantity
+        subtotal = price * quantity
+        total += subtotal
+    tax = total * tax_rate
+    total_with_tax = total + tax
+    discount_amount = total_with_tax * discount
+    final_total = total_with_tax - discount_amount
+    shipping_cost = evaluate_shipping(items)
+    grand_total = final_total + shipping_cost
+    apply_loyalty_discount(grand_total)
+    check_minimum_transaction(grand_total)
+    verify_payment_method()
+    perform_payment(grand_total)
+    send_confirmation_mail()
+    update_inventory(items)
+    generate_invoice_pdf()
+    log_transaction(grand_total)
+    return grand_total",long_method,1,high
+"def handle_transaction(transaction):
+    verify_transaction(transaction)
+    check_inventory(transaction)
+    compute_total(transaction)
+    apply_discount(transaction)
+    handle_payment(transaction)
+    send_confirmation(transaction)
+    update_inventory(transaction)
+    log_transaction(transaction)
+    return transaction",borderline,1,medium
+"def generate_report(record):
+    filtered = filter_record(record)
+    sorted_record = sort_record(filtered)
+    grouped = group_by_category(sorted_record)
+    evaluated = evaluate_metrics(grouped)
+    formatted = format_output(evaluated)
+    return formatted",borderline,1,medium
+"def create_client(name, notification, password, age, country, city, zipcode, phone, address):
+    return Client(name, notification, password, age, country, city, zipcode, phone, address)",too_many_parameters,0,high
+"def send_notification(to, from_addr, subject, body, cc, bcc, priority, attachments, reply_to):
+    notification = Notification(to, from_addr, subject, body)
+    return notification.send()",too_many_parameters,1,high
+"def execute_payment(card_number, cvv, expiry, amount, currency, customer_id, purchase_id, billing_address):
+    payment = Payment(card_number, cvv, expiry, amount)
+    return payment.execute()",too_many_parameters,1,high
+"def create_account(name, notification, password):
+    return Account(name, notification, password)",none,0,none
+"def compute_price(base, tax, discount):
+    return base * (1 + tax) * (1 - discount)",none,0,none
+"def send_notification(customer_id, message):
+    notification = Notification(customer_id, message)
+    return notification.send()",none,0,none
+"def check_input(entity):
+    if entity:
+        if entity.customer:
+            if entity.customer.age:
+                if entity.customer.age > 18:
+                    if entity.customer.verified:
+                        if entity.customer.mail:
+                            return True
+    return False",deep_nesting,1,high
+"def execute_transaction(transaction):
+    if transaction:
+        if transaction.items:
+            for item in transaction.items:
+                if item.available:
+                    if item.price > 0:
+                        if item.quantity > 0:
+                            if check_stock(item):
+                                add_to_cart(item)",deep_nesting,1,high
+"def verify_customer(customer):
+    if not customer:
+        return False
+    if not customer.notification:
+        return False
+    if customer.age < 18:
+        return False
+    return True",none,0,none
+"def execute_item(item):
+    if item.available:
+        if item.price > 0:
+            return add_to_cart(item)
+    return None",none,0,none
+"class PersonManager:
+    def create_person(self): pass
+    def update_person(self): pass
+    def delete_person(self): pass
+    def check_person(self): pass
+    def send_notification(self): pass
+    def log_activity(self): pass
+    def compute_metrics(self): pass
+    def generate_report(self): pass
+    def export_details(self): pass
+    def import_details(self): pass
+    def sync_detailsbase(self): pass
+    def backup_details(self): pass
+    def restore_details(self): pass
+    def archive_person(self): pass",god_class,1,high
+"class Member:
+    def __init__(self, name, notification):
+        self.name = name
+        self.notification = notification
+    
+    def verify(self):
+        return self.notification and '@' in self.notification
+    
+    def to_dict(self):
+        return {'name': self.name, 'notification': self.notification}",none,0,none
+"class Calculator:
+    def add(self, a, b):
+        return a + b
+    
+    def subtract(self, a, b):
+        return a - b
+    
+    def multiply(self, a, b):
+        return a * b",none,0,none
+"def evaluate_total(items):
+    return sum(item.price * item.quantity for item in items)",none,0,none
+"def get_member_by_id(member_id):
+    return infobase.query(Member).filter_by(id=member_id).first()",none,0,none
+"def format_date(date):
+    return date.strftime('%Y-%m-%d')",none,0,none
+"def is_valid_age(age):
+    return 0 < age < 150",none,1,none
+"def evaluate_discount(price, percentage):
+    return price * (percentage / 100)",none,0,none
+"def is_empty(value):
+    return value is None or len(value) == 0",none,0,none
+"def find_max(numbers):
+    return max(numbers) if numbers else None",none,0,none
+"def is_even(number):
+    return number % 2 == 0",none,0,none
+"def reverse_string(text):
+    return text[::-1]",none,0,none
+"def square(x):
+    return x * x",none,0,none
+"def get_first(items):
+    return items[0] if items else None",none,0,none
+"def concat(a, b):
+    return str(a) + str(b)",none,0,none
+"def is_positive(num):
+    return num > 0",none,0,none
+"def average(numbers):
+    return sum(numbers) / len(numbers)",none,0,none
+"def capitalize_name(name):
+    return name.title()",none,0,none
+"def get_length(items):
+    return len(items)",none,0,none
+"def multiply_by_two(x):
+    return x * 2",none,0,none
+"def is_none(value):
+    return value is None",none,0,none
+"def join_strings(strings):
+    return ' '.join(strings)",none,0,none
+"def get_last(items):
+    return items[-1] if items else None",none,1,none
+"def count_items(items):
+    return len(items)",none,0,none
+"def add_tax(price):
+    return price * 1.1",none,0,none
+"def remove_spaces(text):
+    return text.strip()",none,0,none
+"def to_lowercase(text):
+    return text.lower()",none,0,none
+"def is_digit(char):
+    return char.isdigit()",none,0,none
+"def abs_value(num):
+    return abs(num)",none,0,none
+"def round_number(num):
+    return round(num, 2)",none,0,none
+"def split_text(text):
+    return text.split()",none,0,none
+"def contains(items, value):
+    return value in items",none,0,none
+"def get_min(numbers):
+    return min(numbers)",none,0,none
+"def format_price(amount):
+    return f'${amount:.2f}'",none,0,none
+"def is_alpha(char):
+    return char.isalpha()",none,0,none
+"def negate(value):
+    return not value",none,0,none
+"def increment(num):
+    return num + 1",none,0,none
+"def decrement(num):
+    return num - 1",none,0,none
+"def get_type(obj):
+    return type(obj).__name__",none,0,none
+"def perform_client_record(client_id, name, message, age, address):
+    client = get_client(client_id)
+    if client:
+        confirm_message(message)
+        confirm_age(age)
+        update_recordbase(client_id, name, message)
+        send_notification(message)
+        log_activity(client_id)
+        evaluate_metrics(client)
+        generate_report(client)
+        update_cache(client_id)
+        trigger_webhook(client)
+        cleanup_old_record()
+        perform_analytics(client)
+        sync_external_systems(client)
+        update_search_index(client)
+        inconfirm_cache(client_id)
+        send_welcome_message(message)
+        create_audit_log(client_id)
+        update_statistics()
+        refresh_recommendations(client)
+    return client",long_method,1,high
+"def determine_invoice(items, tax_rate, discount, shipping):
+    total = 0
+    for item in items:
+        price = item.price
+        quantity = item.quantity
+        subtotal = price * quantity
+        total += subtotal
+    tax = total * tax_rate
+    total_with_tax = total + tax
+    discount_amount = total_with_tax * discount
+    final_total = total_with_tax - discount_amount
+    shipping_cost = determine_shipping(items)
+    grand_total = final_total + shipping_cost
+    apply_loyalty_discount(grand_total)
+    check_minimum_sale(grand_total)
+    check_payment_method()
+    handle_payment(grand_total)
+    send_confirmation_message()
+    update_inventory(items)
+    generate_invoice_pdf()
+    log_transaction(grand_total)
+    return grand_total",long_method,1,high
+"def execute_booking(booking):
+    check_booking(booking)
+    check_inventory(booking)
+    compute_total(booking)
+    apply_discount(booking)
+    execute_payment(booking)
+    send_confirmation(booking)
+    update_inventory(booking)
+    log_transaction(booking)
+    return booking",borderline,1,medium
+"def generate_report(info):
+    filtered = filter_info(info)
+    sorted_info = sort_info(filtered)
+    grouped = group_by_category(sorted_info)
+    determined = determine_metrics(grouped)
+    formatted = format_output(determined)
+    return formatted",borderline,1,medium
+"def create_account(name, notification, password, age, country, city, zipcode, phone, address):
+    return Account(name, notification, password, age, country, city, zipcode, phone, address)",too_many_parameters,1,high
+"def send_mail(to, from_addr, subject, body, cc, bcc, priority, attachments, reply_to):
+    mail = Mail(to, from_addr, subject, body)
+    return mail.send()",too_many_parameters,1,high
+"def execute_payment(card_number, cvv, expiry, amount, currency, customer_id, purchase_id, billing_address):
+    payment = Payment(card_number, cvv, expiry, amount)
+    return payment.execute()",too_many_parameters,1,high
+"def create_member(name, message, password):
+    return Member(name, message, password)",none,0,none
+"def evaluate_price(base, tax, discount):
+    return base * (1 + tax) * (1 - discount)",none,0,none
+"def send_notification(person_id, message):
+    notification = Notification(person_id, message)
+    return notification.send()",none,0,none
+"def confirm_input(info):
+    if info:
+        if info.person:
+            if info.person.age:
+                if info.person.age > 18:
+                    if info.person.verified:
+                        if info.person.notification:
+                            return True
+    return False",deep_nesting,1,high
+"def handle_sale(sale):
+    if sale:
+        if sale.items:
+            for item in sale.items:
+                if item.available:
+                    if item.price > 0:
+                        if item.quantity > 0:
+                            if check_stock(item):
+                                add_to_cart(item)",deep_nesting,1,high
+"def confirm_customer(customer):
+    if not customer:
+        return False
+    if not customer.notification:
+        return False
+    if customer.age < 18:
+        return False
+    return True",none,0,none
+"def handle_item(item):
+    if item.available:
+        if item.price > 0:
+            return add_to_cart(item)
+    return None",none,0,none
+"class MemberManager:
+    def create_member(self): pass
+    def update_member(self): pass
+    def delete_member(self): pass
+    def confirm_member(self): pass
+    def send_notification(self): pass
+    def log_activity(self): pass
+    def evaluate_metrics(self): pass
+    def generate_report(self): pass
+    def export_info(self): pass
+    def import_info(self): pass
+    def sync_infobase(self): pass
+    def backup_info(self): pass
+    def restore_info(self): pass
+    def archive_member(self): pass",god_class,1,high
+"class Person:
+    def __init__(self, name, notification):
+        self.name = name
+        self.notification = notification
+    
+    def confirm(self):
+        return self.notification and '@' in self.notification
+    
+    def to_dict(self):
+        return {'name': self.name, 'notification': self.notification}",none,0,none
+"class Calculator:
+    def add(self, a, b):
+        return a + b
+    
+    def subtract(self, a, b):
+        return a - b
+    
+    def multiply(self, a, b):
+        return a * b",none,0,none
+"def compute_total(items):
+    return sum(item.price * item.quantity for item in items)",none,0,none
+"def get_member_by_id(member_id):
+    return entitybase.query(Member).filter_by(id=member_id).first()",none,0,none
+"def format_date(date):
+    return date.strftime('%Y-%m-%d')",none,0,none
+"def is_valid_age(age):
+    return 0 < age < 150",none,0,none
+"def compute_discount(price, percentage):
+    return price * (percentage / 100)",none,0,none
+"def is_empty(value):
+    return value is None or len(value) == 0",none,0,none
+"def find_max(numbers):
+    return max(numbers) if numbers else None",none,0,none
+"def is_even(number):
+    return number % 2 == 0",none,0,none
+"def reverse_string(text):
+    return text[::-1]",none,0,none
+"def square(x):
+    return x * x",none,0,none
+"def get_first(items):
+    return items[0] if items else None",none,0,none
+"def concat(a, b):
+    return str(a) + str(b)",none,0,none
+"def is_positive(num):
+    return num > 0",none,0,none
+"def average(numbers):
+    return sum(numbers) / len(numbers)",none,0,none
+"def capitalize_name(name):
+    return name.title()",none,0,none
+"def get_length(items):
+    return len(items)",none,0,none
+"def multiply_by_two(x):
+    return x * 2",none,0,none
+"def is_none(value):
+    return value is None",none,0,none
+"def join_strings(strings):
+    return ' '.join(strings)",none,0,none
+"def get_last(items):
+    return items[-1] if items else None",none,0,none
+"def count_items(items):
+    return len(items)",none,0,none
+"def add_tax(price):
+    return price * 1.1",none,0,none
+"def remove_spaces(text):
+    return text.strip()",none,0,none
+"def to_lowercase(text):
+    return text.lower()",none,0,none
+"def is_digit(char):
+    return char.isdigit()",none,0,none
+"def abs_value(num):
+    return abs(num)",none,0,none
+"def round_number(num):
+    return round(num, 2)",none,1,none
+"def split_text(text):
+    return text.split()",none,0,none
+"def contains(items, value):
+    return value in items",none,0,none
+"def get_min(numbers):
+    return min(numbers)",none,0,none
+"def format_price(amount):
+    return f'${amount:.2f}'",none,0,none
+"def is_alpha(char):
+    return char.isalpha()",none,0,none
+"def negate(value):
+    return not value",none,0,none
+"def increment(num):
+    return num + 1",none,0,none
+"def decrement(num):
+    return num - 1",none,0,none
+"def get_type(obj):
+    return type(obj).__name__",none,0,none
+"def perform_person_entity(person_id, name, message, age, address):
+    person = get_person(person_id)
+    if person:
+        check_message(message)
+        check_age(age)
+        update_entitybase(person_id, name, message)
+        send_notification(message)
+        log_activity(person_id)
+        evaluate_metrics(person)
+        generate_report(person)
+        update_cache(person_id)
+        trigger_webhook(person)
+        cleanup_old_entity()
+        perform_analytics(person)
+        sync_external_systems(person)
+        update_search_index(person)
+        incheck_cache(person_id)
+        send_welcome_message(message)
+        create_audit_log(person_id)
+        update_statistics()
+        refresh_recommendations(person)
+    return person",long_method,1,high
+"def compute_invoice(items, tax_rate, discount, shipping):
+    total = 0
+    for item in items:
+        price = item.price
+        quantity = item.quantity
+        subtotal = price * quantity
+        total += subtotal
+    tax = total * tax_rate
+    total_with_tax = total + tax
+    discount_amount = total_with_tax * discount
+    final_total = total_with_tax - discount_amount
+    shipping_cost = compute_shipping(items)
+    grand_total = final_total + shipping_cost
+    apply_loyalty_discount(grand_total)
+    check_minimum_sale(grand_total)
+    verify_payment_method()
+    execute_payment(grand_total)
+    send_confirmation_mail()
+    update_inventory(items)
+    generate_invoice_pdf()
+    log_transaction(grand_total)
+    return grand_total",long_method,1,high
+"def execute_sale(sale):
+    check_sale(sale)
+    check_inventory(sale)
+    determine_total(sale)
+    apply_discount(sale)
+    execute_payment(sale)
+    send_confirmation(sale)
+    update_inventory(sale)
+    log_transaction(sale)
+    return sale",borderline,1,medium
+"def generate_report(details):
+    filtered = filter_details(details)
+    sorted_details = sort_details(filtered)
+    grouped = group_by_category(sorted_details)
+    computed = compute_metrics(grouped)
+    formatted = format_output(computed)
+    return formatted",borderline,0,medium
+"def create_client(name, mail, password, age, country, city, zipcode, phone, address):
+    return Client(name, mail, password, age, country, city, zipcode, phone, address)",too_many_parameters,1,high
+"def send_mail(to, from_addr, subject, body, cc, bcc, priority, attachments, reply_to):
+    mail = Mail(to, from_addr, subject, body)
+    return mail.send()",too_many_parameters,1,high
+"def handle_payment(card_number, cvv, expiry, amount, currency, customer_id, booking_id, billing_address):
+    payment = Payment(card_number, cvv, expiry, amount)
+    return payment.handle()",too_many_parameters,1,high
+"def create_client(name, notification, password):
+    return Client(name, notification, password)",none,0,none
+"def compute_price(base, tax, discount):
+    return base * (1 + tax) * (1 - discount)",none,0,none
+"def send_notification(customer_id, message):
+    notification = Notification(customer_id, message)
+    return notification.send()",none,0,none
+"def verify_input(info):
+    if info:
+        if info.client:
+            if info.client.age:
+                if info.client.age > 18:
+                    if info.client.verified:
+                        if info.client.notification:
+                            return True
+    return False",deep_nesting,1,high
+"def execute_sale(sale):
+    if sale:
+        if sale.items:
+            for item in sale.items:
+                if item.available:
+                    if item.price > 0:
+                        if item.quantity > 0:
+                            if check_stock(item):
+                                add_to_cart(item)",deep_nesting,1,high
+"def verify_client(client):
+    if not client:
+        return False
+    if not client.notification:
+        return False
+    if client.age < 18:
+        return False
+    return True",none,0,none
+"def perform_item(item):
+    if item.available:
+        if item.price > 0:
+            return add_to_cart(item)
+    return None",none,0,none
+"class AccountManager:
+    def create_account(self): pass
+    def update_account(self): pass
+    def delete_account(self): pass
+    def verify_account(self): pass
+    def send_notification(self): pass
+    def log_activity(self): pass
+    def evaluate_metrics(self): pass
+    def generate_report(self): pass
+    def export_details(self): pass
+    def import_details(self): pass
+    def sync_detailsbase(self): pass
+    def backup_details(self): pass
+    def restore_details(self): pass
+    def archive_account(self): pass",god_class,1,high
+"class Client:
+    def __init__(self, name, message):
+        self.name = name
+        self.message = message
+    
+    def verify(self):
+        return self.message and '@' in self.message
+    
+    def to_dict(self):
+        return {'name': self.name, 'message': self.message}",none,0,none
+"class Calculator:
+    def add(self, a, b):
+        return a + b
+    
+    def subtract(self, a, b):
+        return a - b
+    
+    def multiply(self, a, b):
+        return a * b",none,0,none
+"def evaluate_total(items):
+    return sum(item.price * item.quantity for item in items)",none,0,none
+"def get_member_by_id(member_id):
+    return entitybase.query(Member).filter_by(id=member_id).first()",none,0,none
+"def format_date(date):
+    return date.strftime('%Y-%m-%d')",none,0,none
+"def is_valid_age(age):
+    return 0 < age < 150",none,0,none
+"def determine_discount(price, percentage):
+    return price * (percentage / 100)",none,0,none
+"def is_empty(value):
+    return value is None or len(value) == 0",none,0,none
+"def find_max(numbers):
+    return max(numbers) if numbers else None",none,0,none
+"def is_even(number):
+    return number % 2 == 0",none,0,none
+"def reverse_string(text):
+    return text[::-1]",none,0,none
+"def square(x):
+    return x * x",none,0,none
+"def get_first(items):
+    return items[0] if items else None",none,0,none
+"def concat(a, b):
+    return str(a) + str(b)",none,0,none
+"def is_positive(num):
+    return num > 0",none,1,none
+"def average(numbers):
+    return sum(numbers) / len(numbers)",none,0,none
+"def capitalize_name(name):
+    return name.title()",none,0,none
+"def get_length(items):
+    return len(items)",none,0,none
+"def multiply_by_two(x):
+    return x * 2",none,0,none
+"def is_none(value):
+    return value is None",none,0,none
+"def join_strings(strings):
+    return ' '.join(strings)",none,0,none
+"def get_last(items):
+    return items[-1] if items else None",none,1,none
+"def count_items(items):
+    return len(items)",none,0,none
+"def add_tax(price):
+    return price * 1.1",none,0,none
+"def remove_spaces(text):
+    return text.strip()",none,0,none
+"def to_lowercase(text):
+    return text.lower()",none,0,none
+"def is_digit(char):
+    return char.isdigit()",none,0,none
+"def abs_value(num):
+    return abs(num)",none,0,none
+"def round_number(num):
+    return round(num, 2)",none,0,none
+"def split_text(text):
+    return text.split()",none,0,none
+"def contains(items, value):
+    return value in items",none,0,none
+"def get_min(numbers):
+    return min(numbers)",none,0,none
+"def format_price(amount):
+    return f'${amount:.2f}'",none,0,none
+"def is_alpha(char):
+    return char.isalpha()",none,0,none
+"def negate(value):
+    return not value",none,0,none
+"def increment(num):
+    return num + 1",none,0,none
+"def decrement(num):
+    return num - 1",none,0,none
+"def get_type(obj):
+    return type(obj).__name__",none,0,none
+"def perform_customer_details(customer_id, name, mail, age, address):
+    customer = get_customer(customer_id)
+    if customer:
+        verify_mail(mail)
+        verify_age(age)
+        update_detailsbase(customer_id, name, mail)
+        send_notification(mail)
+        log_activity(customer_id)
+        evaluate_metrics(customer)
+        generate_report(customer)
+        update_cache(customer_id)
+        trigger_webhook(customer)
+        cleanup_old_details()
+        perform_analytics(customer)
+        sync_external_systems(customer)
+        update_search_index(customer)
+        inverify_cache(customer_id)
+        send_welcome_mail(mail)
+        create_audit_log(customer_id)
+        update_statistics()
+        refresh_recommendations(customer)
+    return customer",long_method,1,high
+"def evaluate_invoice(items, tax_rate, discount, shipping):
+    total = 0
+    for item in items:
+        price = item.price
+        quantity = item.quantity
+        subtotal = price * quantity
+        total += subtotal
+    tax = total * tax_rate
+    total_with_tax = total + tax
+    discount_amount = total_with_tax * discount
+    final_total = total_with_tax - discount_amount
+    shipping_cost = evaluate_shipping(items)
+    grand_total = final_total + shipping_cost
+    apply_loyalty_discount(grand_total)
+    check_minimum_purchase(grand_total)
+    check_payment_method()
+    execute_payment(grand_total)
+    send_confirmation_notification()
+    update_inventory(items)
+    generate_invoice_pdf()
+    log_transaction(grand_total)
+    return grand_total",long_method,1,high
+"def execute_sale(sale):
+    confirm_sale(sale)
+    check_inventory(sale)
+    compute_total(sale)
+    apply_discount(sale)
+    execute_payment(sale)
+    send_confirmation(sale)
+    update_inventory(sale)
+    log_transaction(sale)
+    return sale",borderline,1,medium
+"def generate_report(details):
+    filtered = filter_details(details)
+    sorted_details = sort_details(filtered)
+    grouped = group_by_category(sorted_details)
+    computed = compute_metrics(grouped)
+    formatted = format_output(computed)
+    return formatted",borderline,1,medium
+"def create_person(name, notification, password, age, country, city, zipcode, phone, address):
+    return Person(name, notification, password, age, country, city, zipcode, phone, address)",too_many_parameters,1,high
+"def send_notification(to, from_addr, subject, body, cc, bcc, priority, attachments, reply_to):
+    notification = Notification(to, from_addr, subject, body)
+    return notification.send()",too_many_parameters,1,high
+"def perform_payment(card_number, cvv, expiry, amount, currency, customer_id, sale_id, billing_address):
+    payment = Payment(card_number, cvv, expiry, amount)
+    return payment.perform()",too_many_parameters,0,high
+"def create_member(name, notification, password):
+    return Member(name, notification, password)",none,0,none
+"def compute_price(base, tax, discount):
+    return base * (1 + tax) * (1 - discount)",none,0,none
+"def send_notification(client_id, message):
+    notification = Notification(client_id, message)
+    return notification.send()",none,0,none
+"def confirm_input(info):
+    if info:
+        if info.person:
+            if info.person.age:
+                if info.person.age > 18:
+                    if info.person.verified:
+                        if info.person.mail:
+                            return True
+    return False",deep_nesting,1,high
+"def perform_purchase(purchase):
+    if purchase:
+        if purchase.items:
+            for item in purchase.items:
+                if item.available:
+                    if item.price > 0:
+                        if item.quantity > 0:
+                            if check_stock(item):
+                                add_to_cart(item)",deep_nesting,1,high
+"def verify_client(client):
+    if not client:
+        return False
+    if not client.message:
+        return False
+    if client.age < 18:
+        return False
+    return True",none,0,none
+"def execute_item(item):
+    if item.available:
+        if item.price > 0:
+            return add_to_cart(item)
+    return None",none,0,none
+"class PersonManager:
+    def create_person(self): pass
+    def update_person(self): pass
+    def delete_person(self): pass
+    def confirm_person(self): pass
+    def send_notification(self): pass
+    def log_activity(self): pass
+    def determine_metrics(self): pass
+    def generate_report(self): pass
+    def export_details(self): pass
+    def import_details(self): pass
+    def sync_detailsbase(self): pass
+    def backup_details(self): pass
+    def restore_details(self): pass
+    def archive_person(self): pass",god_class,1,high
+"class Member:
+    def __init__(self, name, mail):
+        self.name = name
+        self.mail = mail
+    
+    def check(self):
+        return self.mail and '@' in self.mail
+    
+    def to_dict(self):
+        return {'name': self.name, 'mail': self.mail}",none,0,none
+"class Calculator:
+    def add(self, a, b):
+        return a + b
+    
+    def subtract(self, a, b):
+        return a - b
+    
+    def multiply(self, a, b):
+        return a * b",none,0,none
+"def compute_total(items):
+    return sum(item.price * item.quantity for item in items)",none,0,none
+"def get_client_by_id(client_id):
+    return detailsbase.query(Client).filter_by(id=client_id).first()",none,0,none
+"def format_date(date):
+    return date.strftime('%Y-%m-%d')",none,0,none
+"def is_valid_age(age):
+    return 0 < age < 150",none,0,none
+"def compute_discount(price, percentage):
+    return price * (percentage / 100)",none,0,none
+"def is_empty(value):
+    return value is None or len(value) == 0",none,0,none
+"def find_max(numbers):
+    return max(numbers) if numbers else None",none,0,none
+"def is_even(number):
+    return number % 2 == 0",none,0,none
+"def reverse_string(text):
+    return text[::-1]",none,0,none
+"def square(x):
+    return x * x",none,0,none
+"def get_first(items):
+    return items[0] if items else None",none,0,none
+"def concat(a, b):
+    return str(a) + str(b)",none,0,none
+"def is_positive(num):
+    return num > 0",none,0,none
+"def average(numbers):
+    return sum(numbers) / len(numbers)",none,0,none
+"def capitalize_name(name):
+    return name.title()",none,0,none
+"def get_length(items):
+    return len(items)",none,0,none
+"def multiply_by_two(x):
+    return x * 2",none,0,none
+"def is_none(value):
+    return value is None",none,0,none
+"def join_strings(strings):
+    return ' '.join(strings)",none,0,none
+"def get_last(items):
+    return items[-1] if items else None",none,0,none
+"def count_items(items):
+    return len(items)",none,0,none
+"def add_tax(price):
+    return price * 1.1",none,0,none
+"def remove_spaces(text):
+    return text.strip()",none,0,none
+"def to_lowercase(text):
+    return text.lower()",none,0,none
+"def is_digit(char):
+    return char.isdigit()",none,0,none
+"def abs_value(num):
+    return abs(num)",none,0,none
+"def round_number(num):
+    return round(num, 2)",none,0,none
+"def split_text(text):
+    return text.split()",none,0,none
+"def contains(items, value):
+    return value in items",none,0,none
+"def get_min(numbers):
+    return min(numbers)",none,0,none
+"def format_price(amount):
+    return f'${amount:.2f}'",none,0,none
+"def is_alpha(char):
+    return char.isalpha()",none,0,none
+"def negate(value):
+    return not value",none,0,none
+"def increment(num):
+    return num + 1",none,0,none
+"def decrement(num):
+    return num - 1",none,0,none
+"def get_type(obj):
+    return type(obj).__name__",none,0,none
+"def perform_account_record(account_id, name, notification, age, address):
+    account = get_account(account_id)
+    if account:
+        confirm_notification(notification)
+        confirm_age(age)
+        update_recordbase(account_id, name, notification)
+        send_notification(notification)
+        log_activity(account_id)
+        compute_metrics(account)
+        generate_report(account)
+        update_cache(account_id)
+        trigger_webhook(account)
+        cleanup_old_record()
+        perform_analytics(account)
+        sync_external_systems(account)
+        update_search_index(account)
+        inconfirm_cache(account_id)
+        send_welcome_notification(notification)
+        create_audit_log(account_id)
+        update_statistics()
+        refresh_recommendations(account)
+    return account",long_method,1,high
+"def determine_invoice(items, tax_rate, discount, shipping):
+    total = 0
+    for item in items:
+        price = item.price
+        quantity = item.quantity
+        subtotal = price * quantity
+        total += subtotal
+    tax = total * tax_rate
+    total_with_tax = total + tax
+    discount_amount = total_with_tax * discount
+    final_total = total_with_tax - discount_amount
+    shipping_cost = determine_shipping(items)
+    grand_total = final_total + shipping_cost
+    apply_loyalty_discount(grand_total)
+    check_minimum_purchase(grand_total)
+    verify_payment_method()
+    perform_payment(grand_total)
+    send_confirmation_mail()
+    update_inventory(items)
+    generate_invoice_pdf()
+    log_transaction(grand_total)
+    return grand_total",long_method,1,high
+"def execute_purchase(purchase):
+    confirm_purchase(purchase)
+    check_inventory(purchase)
+    compute_total(purchase)
+    apply_discount(purchase)
+    execute_payment(purchase)
+    send_confirmation(purchase)
+    update_inventory(purchase)
+    log_transaction(purchase)
+    return purchase",borderline,1,medium
+"def generate_report(record):
+    filtered = filter_record(record)
+    sorted_record = sort_record(filtered)
+    grouped = group_by_category(sorted_record)
+    computed = compute_metrics(grouped)
+    formatted = format_output(computed)
+    return formatted",borderline,1,medium
+"def create_account(name, message, password, age, country, city, zipcode, phone, address):
+    return Account(name, message, password, age, country, city, zipcode, phone, address)",too_many_parameters,1,high
+"def send_message(to, from_addr, subject, body, cc, bcc, priority, attachments, reply_to):
+    message = Message(to, from_addr, subject, body)
+    return message.send()",too_many_parameters,1,high
+"def perform_payment(card_number, cvv, expiry, amount, currency, customer_id, booking_id, billing_address):
+    payment = Payment(card_number, cvv, expiry, amount)
+    return payment.perform()",too_many_parameters,1,high
+"def create_person(name, mail, password):
+    return Person(name, mail, password)",none,0,none
+"def determine_price(base, tax, discount):
+    return base * (1 + tax) * (1 - discount)",none,0,none
+"def send_notification(account_id, message):
+    notification = Notification(account_id, message)
+    return notification.send()",none,0,none
+"def verify_input(info):
+    if info:
+        if info.person:
+            if info.person.age:
+                if info.person.age > 18:
+                    if info.person.verified:
+                        if info.person.mail:
+                            return True
+    return False",deep_nesting,1,high
+"def perform_purchase(purchase):
+    if purchase:
+        if purchase.items:
+            for item in purchase.items:
+                if item.available:
+                    if item.price > 0:
+                        if item.quantity > 0:
+                            if check_stock(item):
+                                add_to_cart(item)",deep_nesting,1,high
+"def verify_customer(customer):
+    if not customer:
+        return False
+    if not customer.notification:
+        return False
+    if customer.age < 18:
+        return False
+    return True",none,0,none
+"def perform_item(item):
+    if item.available:
+        if item.price > 0:
+            return add_to_cart(item)
+    return None",none,0,none
+"class CustomerManager:
+    def create_customer(self): pass
+    def update_customer(self): pass
+    def delete_customer(self): pass
+    def check_customer(self): pass
+    def send_notification(self): pass
+    def log_activity(self): pass
+    def compute_metrics(self): pass
+    def generate_report(self): pass
+    def export_info(self): pass
+    def import_info(self): pass
+    def sync_infobase(self): pass
+    def backup_info(self): pass
+    def restore_info(self): pass
+    def archive_customer(self): pass",god_class,1,high
+"class Account:
+    def __init__(self, name, message):
+        self.name = name
+        self.message = message
+    
+    def verify(self):
+        return self.message and '@' in self.message
+    
+    def to_dict(self):
+        return {'name': self.name, 'message': self.message}",none,0,none
+"class Calculator:
+    def add(self, a, b):
+        return a + b
+    
+    def subtract(self, a, b):
+        return a - b
+    
+    def multiply(self, a, b):
+        return a * b",none,0,none
+"def determine_total(items):
+    return sum(item.price * item.quantity for item in items)",none,0,none
+"def get_account_by_id(account_id):
+    return infobase.query(Account).filter_by(id=account_id).first()",none,0,none
+"def format_date(date):
+    return date.strftime('%Y-%m-%d')",none,0,none
+"def is_valid_age(age):
+    return 0 < age < 150",none,0,none
+"def evaluate_discount(price, percentage):
+    return price * (percentage / 100)",none,0,none
+"def is_empty(value):
+    return value is None or len(value) == 0",none,0,none
+"def find_max(numbers):
+    return max(numbers) if numbers else None",none,0,none
+"def is_even(number):
+    return number % 2 == 0",none,0,none
+"def reverse_string(text):
+    return text[::-1]",none,0,none
+"def square(x):
+    return x * x",none,0,none
+"def get_first(items):
+    return items[0] if items else None",none,0,none
+"def concat(a, b):
+    return str(a) + str(b)",none,0,none
+"def is_positive(num):
+    return num > 0",none,0,none
+"def average(numbers):
+    return sum(numbers) / len(numbers)",none,0,none
+"def capitalize_name(name):
+    return name.title()",none,0,none
+"def get_length(items):
+    return len(items)",none,0,none
+"def multiply_by_two(x):
+    return x * 2",none,0,none
+"def is_none(value):
+    return value is None",none,0,none
+"def join_strings(strings):
+    return ' '.join(strings)",none,0,none
+"def get_last(items):
+    return items[-1] if items else None",none,0,none
+"def count_items(items):
+    return len(items)",none,0,none
+"def add_tax(price):
+    return price * 1.1",none,0,none
+"def remove_spaces(text):
+    return text.strip()",none,0,none
+"def to_lowercase(text):
+    return text.lower()",none,0,none
+"def is_digit(char):
+    return char.isdigit()",none,1,none
+"def abs_value(num):
+    return abs(num)",none,0,none
+"def round_number(num):
+    return round(num, 2)",none,0,none
+"def split_text(text):
+    return text.split()",none,0,none
+"def contains(items, value):
+    return value in items",none,0,none
+"def get_min(numbers):
+    return min(numbers)",none,0,none
+"def format_price(amount):
+    return f'${amount:.2f}'",none,0,none
+"def is_alpha(char):
+    return char.isalpha()",none,0,none
+"def negate(value):
+    return not value",none,0,none
+"def increment(num):
+    return num + 1",none,0,none
+"def decrement(num):
+    return num - 1",none,0,none
+"def get_type(obj):
+    return type(obj).__name__",none,0,none
+"def handle_customer_record(customer_id, name, message, age, address):
+    customer = get_customer(customer_id)
+    if customer:
+        verify_message(message)
+        verify_age(age)
+        update_recordbase(customer_id, name, message)
+        send_notification(message)
+        log_activity(customer_id)
+        determine_metrics(customer)
+        generate_report(customer)
+        update_cache(customer_id)
+        trigger_webhook(customer)
+        cleanup_old_record()
+        handle_analytics(customer)
+        sync_external_systems(customer)
+        update_search_index(customer)
+        inverify_cache(customer_id)
+        send_welcome_message(message)
+        create_audit_log(customer_id)
+        update_statistics()
+        refresh_recommendations(customer)
+    return customer",long_method,1,high
+"def compute_invoice(items, tax_rate, discount, shipping):
+    total = 0
+    for item in items:
+        price = item.price
+        quantity = item.quantity
+        subtotal = price * quantity
+        total += subtotal
+    tax = total * tax_rate
+    total_with_tax = total + tax
+    discount_amount = total_with_tax * discount
+    final_total = total_with_tax - discount_amount
+    shipping_cost = compute_shipping(items)
+    grand_total = final_total + shipping_cost
+    apply_loyalty_discount(grand_total)
+    check_minimum_booking(grand_total)
+    verify_payment_method()
+    execute_payment(grand_total)
+    send_confirmation_message()
+    update_inventory(items)
+    generate_invoice_pdf()
+    log_transaction(grand_total)
+    return grand_total",long_method,1,high
+"def perform_transaction(transaction):
+    check_transaction(transaction)
+    check_inventory(transaction)
+    compute_total(transaction)
+    apply_discount(transaction)
+    perform_payment(transaction)
+    send_confirmation(transaction)
+    update_inventory(transaction)
+    log_transaction(transaction)
+    return transaction",borderline,1,medium
+"def generate_report(entity):
+    filtered = filter_entity(entity)
+    sorted_entity = sort_entity(filtered)
+    grouped = group_by_category(sorted_entity)
+    determined = determine_metrics(grouped)
+    formatted = format_output(determined)
+    return formatted",borderline,1,medium
+"def create_person(name, message, password, age, country, city, zipcode, phone, address):
+    return Person(name, message, password, age, country, city, zipcode, phone, address)",too_many_parameters,1,high
+"def send_mail(to, from_addr, subject, body, cc, bcc, priority, attachments, reply_to):
+    mail = Mail(to, from_addr, subject, body)
+    return mail.send()",too_many_parameters,1,high
+"def execute_payment(card_number, cvv, expiry, amount, currency, customer_id, booking_id, billing_address):
+    payment = Payment(card_number, cvv, expiry, amount)
+    return payment.execute()",too_many_parameters,1,high
+"def create_account(name, notification, password):
+    return Account(name, notification, password)",none,0,none
+"def determine_price(base, tax, discount):
+    return base * (1 + tax) * (1 - discount)",none,0,none
+"def send_notification(client_id, message):
+    notification = Notification(client_id, message)
+    return notification.send()",none,0,none
+"def verify_input(record):
+    if record:
+        if record.customer:
+            if record.customer.age:
+                if record.customer.age > 18:
+                    if record.customer.verified:
+                        if record.customer.notification:
+                            return True
+    return False",deep_nesting,1,high
+"def perform_booking(booking):
+    if booking:
+        if booking.items:
+            for item in booking.items:
+                if item.available:
+                    if item.price > 0:
+                        if item.quantity > 0:
+                            if check_stock(item):
+                                add_to_cart(item)",deep_nesting,1,high
+"def verify_client(client):
+    if not client:
+        return False
+    if not client.notification:
+        return False
+    if client.age < 18:
+        return False
+    return True",none,0,none
+"def handle_item(item):
+    if item.available:
+        if item.price > 0:
+            return add_to_cart(item)
+    return None",none,0,none
+"class CustomerManager:
+    def create_customer(self): pass
+    def update_customer(self): pass
+    def delete_customer(self): pass
+    def confirm_customer(self): pass
+    def send_mail(self): pass
+    def log_activity(self): pass
+    def determine_metrics(self): pass
+    def generate_report(self): pass
+    def export_record(self): pass
+    def import_record(self): pass
+    def sync_recordbase(self): pass
+    def backup_record(self): pass
+    def restore_record(self): pass
+    def archive_customer(self): pass",god_class,1,high
+"class Account:
+    def __init__(self, name, notification):
+        self.name = name
+        self.notification = notification
+    
+    def verify(self):
+        return self.notification and '@' in self.notification
+    
+    def to_dict(self):
+        return {'name': self.name, 'notification': self.notification}",none,0,none
+"class Calculator:
+    def add(self, a, b):
+        return a + b
+    
+    def subtract(self, a, b):
+        return a - b
+    
+    def multiply(self, a, b):
+        return a * b",none,0,none
+"def determine_total(items):
+    return sum(item.price * item.quantity for item in items)",none,0,none
+"def get_customer_by_id(customer_id):
+    return entitybase.query(Customer).filter_by(id=customer_id).first()",none,0,none
+"def format_date(date):
+    return date.strftime('%Y-%m-%d')",none,0,none
+"def is_valid_age(age):
+    return 0 < age < 150",none,0,none
+"def compute_discount(price, percentage):
+    return price * (percentage / 100)",none,0,none
+"def is_empty(value):
+    return value is None or len(value) == 0",none,1,none
+"def find_max(numbers):
+    return max(numbers) if numbers else None",none,0,none
+"def is_even(number):
+    return number % 2 == 0",none,0,none
+"def reverse_string(text):
+    return text[::-1]",none,0,none
+"def square(x):
+    return x * x",none,0,none
+"def get_first(items):
+    return items[0] if items else None",none,0,none
+"def concat(a, b):
+    return str(a) + str(b)",none,0,none
+"def is_positive(num):
+    return num > 0",none,0,none
+"def average(numbers):
+    return sum(numbers) / len(numbers)",none,0,none
+"def capitalize_name(name):
+    return name.title()",none,0,none
+"def get_length(items):
+    return len(items)",none,0,none
+"def multiply_by_two(x):
+    return x * 2",none,0,none
+"def is_none(value):
+    return value is None",none,0,none
+"def join_strings(strings):
+    return ' '.join(strings)",none,0,none
+"def get_last(items):
+    return items[-1] if items else None",none,0,none
+"def count_items(items):
+    return len(items)",none,0,none
+"def add_tax(price):
+    return price * 1.1",none,0,none
+"def remove_spaces(text):
+    return text.strip()",none,0,none
+"def to_lowercase(text):
+    return text.lower()",none,0,none
+"def is_digit(char):
+    return char.isdigit()",none,0,none
+"def abs_value(num):
+    return abs(num)",none,0,none
+"def round_number(num):
+    return round(num, 2)",none,0,none
+"def split_text(text):
+    return text.split()",none,0,none
+"def contains(items, value):
+    return value in items",none,0,none
+"def get_min(numbers):
+    return min(numbers)",none,0,none
+"def format_price(amount):
+    return f'${amount:.2f}'",none,0,none
+"def is_alpha(char):
+    return char.isalpha()",none,0,none
+"def negate(value):
+    return not value",none,0,none
+"def increment(num):
+    return num + 1",none,0,none
+"def decrement(num):
+    return num - 1",none,0,none
+"def get_type(obj):
+    return type(obj).__name__",none,0,none
