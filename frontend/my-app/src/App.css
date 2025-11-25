@@ -1,0 +1,367 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+.App {
+  min-height: 100vh;
+  padding-bottom: 2rem;
+}
+
+/* Header */
+.app-header {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.header-content p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Main Container */
+.main-container {
+  max-width: 1600px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* Panel Styles */
+.editor-panel,
+.results-panel {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.panel-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.smell-count {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Editor */
+.editor-container {
+  height: 500px;
+}
+
+.analyze-button {
+  background: white;
+  color: #667eea;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.analyze-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.analyze-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Results Panel */
+.results-panel {
+  display: flex;
+  flex-direction: column;
+  max-height: 650px;
+}
+
+.smells-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+}
+
+/* Error Message */
+.error-message {
+  background: #fee;
+  color: #c33;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #c33;
+}
+
+/* ML Prediction */
+.ml-prediction {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  padding: 1.5rem;
+  margin: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ml-prediction h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.prediction-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.prediction-status {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.status-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.status-badge.smell {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.status-badge.clean {
+  background: rgba(76, 175, 80, 0.3);
+}
+
+.confidence {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+}
+
+/* No Smells */
+.no-smells {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #999;
+}
+
+.no-smells-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.no-smells p {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.no-smells small {
+  color: #bbb;
+}
+
+/* Smell Cards */
+.smell-card {
+  background: white;
+  border-left: 4px solid;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.smell-card:hover {
+  transform: translateX(4px);
+}
+
+.severity-high {
+  border-left-color: #f44336;
+  background: #ffebee;
+}
+
+.severity-medium {
+  border-left-color: #ff9800;
+  background: #fff3e0;
+}
+
+.severity-low {
+  border-left-color: #2196f3;
+  background: #e3f2fd;
+}
+
+.severity-info {
+  border-left-color: #9c27b0;
+  background: #f3e5f5;
+}
+
+.smell-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.smell-icon {
+  font-size: 1.5rem;
+}
+
+.smell-title h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+  color: #333;
+}
+
+.smell-meta {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.smell-description {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.smell-suggestion {
+  background: white;
+  padding: 1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #444;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.smell-suggestion strong {
+  color: #667eea;
+}
+
+/* Metrics Section */
+.metrics-section {
+  max-width: 1600px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.metrics-section h2 {
+  color: white;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.metric-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.metric-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 0.5rem;
+}
+
+.metric-label {
+  color: #666;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Scrollbar Styling */
+.smells-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.smells-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.smells-container::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 4px;
+}
+
+.smells-container::-webkit-scrollbar-thumb:hover {
+  background: #764ba2;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .main-container {
+    grid-template-columns: 1fr;
+  }
+
+  .results-panel {
+    max-height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .main-container {
+    padding: 0 1rem;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
